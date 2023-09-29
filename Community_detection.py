@@ -257,3 +257,4 @@ for i in range(2) :
 
   res = community_detection(nodes,edges)
   print(res)
+  #brute force zbog slozenosti ne moze da se zavrsi uspesno u predvidjenom vremenskom roku   
