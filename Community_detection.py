@@ -155,14 +155,14 @@ def uniform_crossover(parent_1, parent_2):
 def mutation1(chrom, Adj, mutation_rate):
     if np.random.random_sample() < mutation_rate:
         neighbor = []
-        mutant = np.random.randint(1, len(chrom)) #generisanje na kom mestu u jedinci cemo da mutiramo (ovo ja dalje nazivam mutant znaci nije mi cela jedinka mutant nego na tom mestu)
-        midstep = Adj[:, [mutant]].toarray() #izdvajanje komsija od mutanta
-        row = midstep[:, 0]  # Convert 1D slice to 2D slice using explicit indices 
-        neighbor = [i for i in range(len(row)) if row[i] == 1] #izdvajanje indeksa komsija 
-        if len(neighbor) > 1: #ovaj if je za proveru da l postoji uopste komsija
-            neighbor.remove(chrom[mutant]) #da se ne pogodi da bude isti komsija ko pre na mestu koje mutiramo
-            to_change = int(np.floor(np.random.random_sample() * len(neighbor))) #random generisanje kojeg cemo komsiju od preostalih sad da stavimo na mesto mutanta
-            chrom[mutant] = neighbor[to_change] #stavljanje novog komsije na mesto mutanta
+        mutant = np.random.randint(1, len(chrom)) 
+        midstep = Adj[:, [mutant]].toarray() 
+        row = midstep[:, 0] 
+        neighbor = [i for i in range(len(row)) if row[i] == 1]
+        if len(neighbor) > 1:
+            neighbor.remove(chrom[mutant]) 
+            to_change = int(np.floor(np.random.random_sample() * len(neighbor))) 
+            chrom[mutant] = neighbor[to_change] 
     return chrom
 
 
