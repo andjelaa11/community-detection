@@ -108,7 +108,7 @@ def merge_subsets(sub):
    
 def find_subsets(chrom, Adj):
     
-    sub = [{x, chrom[x]} for x in range(len(chrom))] #izvlaci grane prvo
+    sub = [{x, chrom[x]} for x in range(len(chrom))] 
     i = 0
     while i < len(sub):
         candidate = merge_subsets(sub)
