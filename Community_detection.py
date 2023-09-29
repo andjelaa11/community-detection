@@ -130,7 +130,7 @@ def community_score(chrom,subsets,r,Adj):
         M=0
         v=0
         for row in list(s):
-            row_mean = np.sum(submatrix[row])/len(s) #aiJ
+            row_mean = np.sum(submatrix[row])/len(s) 
             v+=np.sum(submatrix[row])
             M+=(row_mean**r)/len(s)
         CS+=M*v
