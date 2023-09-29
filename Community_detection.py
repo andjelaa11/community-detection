@@ -60,7 +60,8 @@ def community_detection(nodes, edges, population=200, generation=30, r=1.5):
         community_scores.extend(elite_cs)
         chromosomes_scores = list(zip(chromosomes, community_scores))
         chromosomes_scores.sort(key=lambda x: x[1], reverse=True)
-        chromosomes, community_scores = zip(*chromosomes_scores[:population])
+        chromosomes = [chromosome for chromosome, _ in chromosomes_scores[:population]]
+        community_scores = [score for _, score in chromosomes_scores[:population]]
         chromosomes = list(chromosomes)
         community_scores = list(community_scores)
 
