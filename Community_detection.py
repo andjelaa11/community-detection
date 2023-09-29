@@ -237,24 +237,25 @@ communities_using_brute(graph)
 
 
 
-
-for i in range(2) :
-
-  nodes = [0,1,2,3,4,5,6,7,8,9,10]
-  edges = [(0,1),(0,4),(1,2),(2,3),(1,3),(3,0),(0,2),(4,5),(5,6),(6,7),(10,8),(10,9),(8,9),(8,7),(9,7),(7,10)]
-
-  num_nodes = 31 
-
-  nodes = list(range(num_nodes))
-
- 
-  edges = []
-  for node in nodes:
-    neighbor = random.choice([n for n in nodes if n != node])
-    edges.append((node, neighbor))
-
-
-
-  res = community_detection(nodes,edges)
-  print(res)
-  #brute force zbog slozenosti ne moze da se zavrsi uspesno u predvidjenom vremenskom roku   
+def generate_graph():
+    for i in range(2) :
+    
+      nodes = [0,1,2,3,4,5,6,7,8,9,10]
+      edges = [(0,1),(0,4),(1,2),(2,3),(1,3),(3,0),(0,2),(4,5),(5,6),(6,7),(10,8),(10,9),(8,9),(8,7),(9,7),(7,10)]
+    
+      num_nodes = 31 
+    
+      nodes = list(range(num_nodes))
+    
+     
+      edges = []
+      for node in nodes:
+        neighbor = random.choice([n for n in nodes if n != node])
+        edges.append((node, neighbor))
+    
+    
+    
+      res = community_detection(nodes,edges)
+      print(res)
+      #brute force zbog slozenosti ne moze da se zavrsi uspesno u predvidjenom vremenskom roku   
+generate_graph()
