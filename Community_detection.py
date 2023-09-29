@@ -219,8 +219,6 @@ def communities_using_brute(gfg):
   for i in range(len(first_community)):
     inter_edges.append(e-intra_edges1[i]-intra_edges2[i])
   
-  # Calculate the Ratio
-  
   for i in range(len(first_community)):
     ratio.append((float(intra_edges1[i]+intra_edges2[i]))/inter_edges[i])
   
